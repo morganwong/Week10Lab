@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Question 4</title>
+</head>
+<body style="text-align: center; margin-top: 150px">
+
+    <div>
+        <h4>An array of 10 random numbers between 1 and 10:</h4>
+        <h3 id="numbers"></h3>
+
+        <br>
+
+        <button id="chose">Chose the biggest number!</button>
+    </div>
+
+    <script type="text/javascript">
+        const presetArrayOfNumbers = [];
+
+        for(let i = 0; i < 10; i++){
+            presetArrayOfNumbers[i] = Math.floor(Math.random() * 10) + 1;
+        }
+
+        document.getElementById("numbers").innerHTML = presetArrayOfNumbers.toString();
+
+        document.getElementById("chose").onclick = () => {
+            let r = 0;
+            for(let i = 0; i < presetArrayOfNumbers.length; i++){
+                if(r < presetArrayOfNumbers[i]){
+                    r = presetArrayOfNumbers[i];
+                }
+            }
+            alert(r);
+        };
+
+    </script>
+
+</body>
+</html>
